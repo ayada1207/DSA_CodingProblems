@@ -3,9 +3,10 @@ public class MainArrayRunnerClass {
 
 	public static void main(String[] args) {
 		
-		int[] arr = {1,2,2,3,4,5};
+		int[] arr =  {1,2,3,7,5};
 		
-		System.out.println(WaveArray.getWaveArray(arr,6));
+		System.out.println(PatternSearch.pattern("mynameis21Arpit","21Arpit"));
+		
 		
 		
 		

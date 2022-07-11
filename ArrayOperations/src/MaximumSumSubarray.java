@@ -18,10 +18,10 @@ public class MaximumSumSubarray {
 	
 	//efficient Approach
 
-	public static int getSumSubArray(int[] arr) {
+	public static long getSumSubArray(int[] arr) {
 		
 		int res=arr[0];
-		int maxEnding  =0;
+		int maxEnding  =arr[0];
 		
 		for(int i=1;i<arr.length;i++) {
 		maxEnding = Math.max(maxEnding+arr[i],arr[i]);
