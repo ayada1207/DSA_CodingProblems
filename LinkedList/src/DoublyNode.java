@@ -34,13 +34,29 @@ public class DoublyNode {
 	
 	public static void printList(DoublyNode head) {
 		if (head==null) System.out.println("List is Empty");
-		
 		DoublyNode curr = head;
-		
 		while(curr != null) {
 			System.out.println(curr.data + " ");
 			curr = curr.next;
 		}
+	}
+	
+	public static DoublyNode deleteFirst(DoublyNode head) {
+		if(head == null || head.next == null)
+		return null;
+		head= head.next;
+		head.prev = null;
+		return head;
+	}
+	public static DoublyNode deleteLast(DoublyNode head) {
+		if(head == null || head.next == null)
+		return null;
+		DoublyNode curr = head;
+		while(curr.next != null) {
+			curr = curr.next;
+		}
+		curr.prev.next = null;
+		return head;
 	}
 	
 	public static DoublyNode reverseDll(DoublyNode head) {
@@ -53,10 +69,24 @@ public class DoublyNode {
 			prev = curr.prev;
 			curr.prev = curr.next;
 			curr.next = prev;
-			
 			curr = curr.prev;
 		}
 		return prev.prev;
+	}
+	
+	static DoublyNode insertAtPosition(DoublyNode head,int x,int p) {
+		DoublyNode temp = new DoublyNode(p);
+		int count =-1;
+		DoublyNode curr= head;
+		while(curr!=null && count<p) {
+			curr=curr.next;
+			count++;
+		}
+		curr.next = temp;
+		if(curr.next != null)
+		temp.next=curr.next.next;
+		
+		return head;
 	}
 
 	public static void main(String[] args) {

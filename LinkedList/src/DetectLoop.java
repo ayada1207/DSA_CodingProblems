@@ -42,8 +42,9 @@ public class DetectLoop {
 			if(slow == fast)break;
 		}
 		if(slow != fast) return;
-		while(slow.next != fast.next) {
-			slow = slow.next;
+		slow= head;
+		while(slow != fast.next) {
+			//slow = slow.next;
 			fast = fast.next;
 		}
 		fast.next = null;
