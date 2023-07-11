@@ -1,4 +1,4 @@
-package BinaryTree;
+mpackage BinaryTree;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -15,7 +15,7 @@ public class LevelOrderTraversal {
 			if(curr.left != null)
 				qu.add(curr.left);
 			if(curr.right != null)
-				qu.add(curr.right);
+				qu.add(curr.right);1
 		}
 	}
 	
@@ -28,7 +28,7 @@ public class LevelOrderTraversal {
 		q.add(root);
 		q.add(null);
 		
-		while(q.size()>1) {
+		while(q.size()>1) { 
 			Node curr = q.poll();
 			if(curr == null) {
 			   q.add(null);

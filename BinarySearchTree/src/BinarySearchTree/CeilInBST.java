@@ -18,6 +18,6 @@ public class CeilInBST {
 				curr=curr.left;
 			}
 		}
-		return res;
+		return res ;
 	}
 }

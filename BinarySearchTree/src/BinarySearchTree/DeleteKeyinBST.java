@@ -14,13 +14,16 @@ public class DeleteKeyinBST {
 		else {
 			if(root.left == null )return root.right;
 			else if(root.right == null ) return root.left;
-			Node succ = getSuccessor(root);
-			succ.key = root.key;
 			
+			// case where root is parent
+			Node succ = getSuccessor(root);
+			 root.key=succ.key;
+			 root.right = delete(root,succ.key);	
 		}
 		return root;
 	}
 	static Node getSuccessor(Node root) {
+		// selecting nearest greater of deleted node. 
 		Node curr = root.right;
 		while(curr != null && curr.left != null) {
 			curr = curr.left;

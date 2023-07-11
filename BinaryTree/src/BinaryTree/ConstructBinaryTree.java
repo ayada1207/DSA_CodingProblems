@@ -10,7 +10,7 @@ public class ConstructBinaryTree {
 		// make a root from pre order array 
 		Node root = new Node(pre[preIndex++]);
 		
-		//for loop for this root.key inside in-order array if find then 
+		//for loop this root.key inside in-order array if find then 
 		//left of this root.key will be on left side of root and same for right of root
 		int inIndex=0;
 		for(int i=is;i<=ie;i++) {
@@ -20,7 +20,7 @@ public class ConstructBinaryTree {
 			}
 		}
 		root.left = constructBinaryTree(in, pre, is, inIndex-1);
-		root.right = constructBinaryTree(in, pre, inIndex-1, ie);
+		root.right = constructBinaryTree(in, pre, inIndex+1, ie);
 		return root;
 	}
 
